@@ -1,0 +1,10 @@
+{
+  "name": "kongnamul",
+  "app_id": "",
+  "proxies":[
+    {
+      "path":"/musics",
+      "proxyUrl":"https://kongnamul.pythonanywhere.com/musics"
+    }
+  ]
+}
