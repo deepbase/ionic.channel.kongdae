@@ -40,21 +40,11 @@
   </ion-nav-buttons>
   <ion-content>
     <ion-refresher on-refresh="load()" pulling-text="Pull to Refresh"></ion-refresher>
-    <!--<ion-list>
-      <ion-item ng-repeat="music in musics" ui-sref="tabs.detail({music: music.name})">
+    <ion-list>
+      <ion-item ng-repeat="music in musics" ui-sref="tabs.detail({id: music.id})">
         {{music.composer}} - {{music.name}}
       </ion-item>
-    </ion-list>-->
+    </ion-list>
 
-    <div class="custom-list" ng-repeat="music in musics" ui-sref="tabs.detail({id: music.id})">
-        <div class="list-thumbnail-area">
-        
-        </div>
-        
-        <div class="list-name-area" href="#/app/musicDetail/{{music.id}}">
-            <span>{{music.composer}} - {{music.name}}</span>
-        </div>
-      
-    </div>
   </ion-content>
 </ion-view>
