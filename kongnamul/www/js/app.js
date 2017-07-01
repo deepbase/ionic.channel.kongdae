@@ -17,6 +17,15 @@ angular.module('App', ['ionic'])
         }
       }
     })
+    .state('tabs.detail', {
+      url: '/detail/:id',
+      views: {
+        'musics-tab': {
+          templateUrl: 'views/musics/music.html',
+          controller: 'DetailController'
+        }
+      }
+    })
     .state('tabs.musicians', {
       url: '/musicians',
       views: {

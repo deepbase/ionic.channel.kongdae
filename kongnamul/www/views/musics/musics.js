@@ -24,4 +24,11 @@ angular.module('App')
   };
 
   $scope.load();
+})
+
+.controller('DetailController', function($scope, $http, $stateParams) {
+    let musicId = $stateParams.id;
+    $http.get('https://kongnamul.pythonanywhere.com/musics/'+musicId).then(function(data, status, headers, config){
+        $scope.music = data.data;
+    });
 });
