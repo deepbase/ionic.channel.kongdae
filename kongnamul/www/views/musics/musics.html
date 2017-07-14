@@ -40,11 +40,42 @@
   </ion-nav-buttons>
   <ion-content>
     <ion-refresher on-refresh="load()" pulling-text="Pull to Refresh"></ion-refresher>
-    <ion-list>
+    <!--<ion-list>
       <ion-item ng-repeat="music in musics" ui-sref="tabs.detail({id: music.id})">
         {{music.composer}} - {{music.name}}
       </ion-item>
-    </ion-list>
+    </ion-list>-->
+      <ion-item class="card-wrap" ng-repeat="music in musics" ui-sref="tabs.detail({id: music.id})">
+        <ion-card>
 
+          <ion-card-header>
+          </ion-card-header>
+
+          <ion-card-content>
+            <div class="song-name">
+                <span style="font-weight: 800;">{{music.koreanName}}</span>
+            </div>
+            <div class="composer-name">
+                <span style="font-size:16px; font-weight: 500;">{{music.composer}}</span>
+            </div>
+            <p class="star_rating">
+                <a href="#" class="on">★</a>
+                <a href="#" class="on">★</a>
+                <a href="#" class="on">★</a>
+                <a href="#">★</a>
+                <a href="#">★</a>
+            </p>
+
+            <div class="thumb-icons-wrap">
+                <span class="glyphicon glyphicon-thumbs-up" style="font-size: 25px; font-weight: 800; display: inline-block;"></span>
+                <span style="font-size: 25px; font-weight: 500; display: inline-block;">50</span>
+            </div>
+            <div class="composer-thumbnail">
+                <img src="http://kongnamul.pythonanywhere.com/static/musics/img/Beethoven.jpg" class="composer-img"/>
+            </div>
+          </ion-card-content>
+
+        </ion-card>
+      </ion-item>
   </ion-content>
 </ion-view>

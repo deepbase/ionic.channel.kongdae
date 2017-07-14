@@ -18,6 +18,7 @@ angular.module('App')
   $scope.load = function () {
     $http.get('https://kongnamul.pythonanywhere.com/musics').success(function (musics) {
     	$scope.musics = musics;
+        console.log(musics)
     }).finally(function () {
       $scope.$broadcast('scroll.refreshComplete');
     });
