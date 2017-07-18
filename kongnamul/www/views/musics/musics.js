@@ -1,18 +1,38 @@
 angular.module('App')
-.controller('MusicsController', function ($scope, $http, $ionicPopover) {
+.controller('MusicsController', function ($scope, $http, $ionicPopover, $ionicModal) {
   
   $scope.musics;
-
+  
   $ionicPopover.fromTemplateUrl('views/musics/help-popover.html', {
     scope: $scope,
   }).then(function (popover) {
     $scope.popover = popover;
   });
+  
   $scope.openHelp = function($event) {
     $scope.popover.show($event);
   };
+  
+  $scope.showSearchModal = function () {
+	  if ($scope.modal) {
+		  $scope.modal.show();
+	  } else {
+		  $ionicModal.fromTemplateUrl('views/musics/search-modal.html', {
+			  scope: $scope
+		  }).then(function (modal) {
+			  $scope.modal = modal;
+			  $scope.modal.show();
+		  });
+	  }
+  };
+  
+  $scope.hideSearchModal = function () {
+	  $scope.modal.hide();
+  };
+  
   $scope.$on('$destroy', function() {
-    $scope.popover.remove();
+	  $scope.modal.remove();
+      $scope.popover.remove();
   });
 
   $scope.load = function () {
