@@ -17,7 +17,7 @@ angular.module('App')
 	  if ($scope.modal) {
 		  $scope.modal.show();
 	  } else {
-		  $ionicModal.fromTemplateUrl('views/musics/search-modal.html', {
+		  $ionicModal.fromTemplateUrl('views/musics/modal/search-modal.html', {
 			  scope: $scope
 		  }).then(function (modal) {
 			  $scope.modal = modal;
