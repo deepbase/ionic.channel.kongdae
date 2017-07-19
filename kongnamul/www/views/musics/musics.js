@@ -14,24 +14,24 @@ angular.module('App')
   };
   
   $scope.showSearchModal = function () {
-	  if ($scope.modal) {
-		  $scope.modal.show();
+	  if ($scope.searchModal) {
+		  $scope.searchModal.show();
 	  } else {
 		  $ionicModal.fromTemplateUrl('views/musics/modal/search-modal.html', {
 			  scope: $scope
 		  }).then(function (modal) {
-			  $scope.modal = modal;
-			  $scope.modal.show();
+			  $scope.searchModal = modal;
+			  $scope.searchModal.show();
 		  });
 	  }
   };
   
   $scope.hideSearchModal = function () {
-	  $scope.modal.hide();
+	  $scope.searchModal.hide();
   };
   
   $scope.$on('$destroy', function() {
-	  $scope.modal.remove();
+	  $scope.searchModal.remove();
       $scope.popover.remove();
   });
 
