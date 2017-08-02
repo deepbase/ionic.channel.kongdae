@@ -1,9 +1,35 @@
-<ion-modal-view style="height: 50%;">
-  <ion-header-bar class="bar-dark">
-    <h1 class="title">검색조건 입력</h1>
-    <button class="button button-clear" ng-click="hideSearchModal()">Close</button>
-  </ion-header-bar>
-  <ion-content>
-    <div class="padding">검색모달입니당~</div>
-  </ion-content>
-</ion-modal-view>
+<style>
+  .search-condition-modal .modal {
+      min-height: 0 !important;
+  }
+  
+  .search-condition-popup {
+      height: 80%;
+      top: 20%;
+      background-color: #ffffff;
+  }
+</style>
+
+<div class="search-condition-modal">
+  <ion-modal-view class="search-condition-popup">
+    <ion-header-bar class="bar-dark">
+      <h1 class="title">검색조건 입력</h1>
+      <button class="button button-clear" ng-click="hideSearchModal()">Close</button>
+    </ion-header-bar>
+    <ion-tabs class = "tabs-striped">
+      <ion-tab title = "작곡가" href="tabs.searchKeytabs.searchKeyView({key: composer})">
+        <ion-nav-view name="musics-search-key"></ion-nav-view>
+      </ion-tab>
+      <ion-tab title = "장르" href="tabs.searchKeytabs.searchKeyView({key: genre})"/>
+        <ion-nav-view name="musics-search-key"></ion-nav-view>
+      </ion-tab>
+      <ion-tab title = "작곡연도" href="tabs.searchKeytabs.searchKeyView({key: compositionYear})"/>
+        <ion-nav-view name="musics-search-key"></ion-nav-view>
+      </ion-tab>
+      <ion-tab title = "악기" href="#/musics/modal/instrument"/>
+        <ion-nav-view name="musics-search-key"></ion-nav-view>
+      </ion-tab>
+    </ion-tabs>
+  </ion-modal-view>
+</div>
+

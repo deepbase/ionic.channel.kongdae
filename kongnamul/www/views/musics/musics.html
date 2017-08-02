@@ -36,22 +36,22 @@
         margin-top: 5px;
     }
     
-    .icon-small{
-        margin-top: 25px;
-        font-size: 15px;
+    .custom-arrow-icon {
+        margin: 0 0 0 4px;
+        font-size: 18px;
     }
     
 </style>
 
 <ion-view>
   <ion-nav-title>
-    <button ng-click="showSearchModal()" class="top-title button button-clear">모든 곡</button><i class="icon-small icon ion-ios-arrow-down"></i>
+    <button ng-click="showSearchModal()" ng-controller="SearchModalController" class="top-title button button-clear header-button"><span>모든 곡</span><i class="custom-arrow-icon ion-ios-arrow-down"></i></button>
   </ion-nav-title>
   <ion-nav-buttons side="primary">
     <button class="button button-clear icon ion-ios-search" ng-click="openHelp($event)"></button>
   </ion-nav-buttons>
   <div class = "bar bar-subheader bar-light">
-    <button class="button button-clear">평점순</button><i class="icon-small icon ion-arrow-down-b"></i>
+    <button class="button button-clear">평점순<i class="custom-arrow-icon ion-arrow-down-b"></i></button>
   </div>
   <ion-content class = "padding has-subheader">
     <ion-refresher on-refresh="load()" pulling-text="Pull to Refresh"></ion-refresher>
@@ -60,7 +60,7 @@
         {{music.composer}} - {{music.name}}
       </ion-item>
     </ion-list>-->
-      <ion-item class="card-wrap" ng-repeat="music in musics" ui-sref="tabs.detail({id: music.id})">
+      <ion-item class="card-wrap" ng-repeat="music in musics" ui-sref="tabs.musicDetail({id: music.id})">
         <ion-card>
 
           <ion-card-header>

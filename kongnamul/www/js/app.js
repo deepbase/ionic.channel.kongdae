@@ -8,6 +8,8 @@ angular.module('App', ['ionic'])
       abstract: true,
       templateUrl: 'views/tabs/tabs.html'
     })
+    
+    // musics
     .state('tabs.musics', {
       url: '/musics',
       views: {
@@ -17,15 +19,31 @@ angular.module('App', ['ionic'])
         }
       }
     })
-    .state('tabs.detail', {
+    .state('tabs.musicDetail', {
       url: '/detail/:id',
       views: {
         'musics-tab': {
-          templateUrl: 'views/musics/music.html',
-          controller: 'DetailController'
+          templateUrl: 'views/musics/detail/music-detail.html',
+          controller: 'MusicDetailController',
         }
       }
     })
+    .state('tabs.searchKeytabs', {
+      url: '/searchKeyTabs',
+      abstract: true,
+      templateUrl: 'views/musics/modal/search-modal.html'
+    })
+    .state('tabs.searchKeytabs.searchKeyView', {
+      url: '/musics/modal/:key',
+      views: {
+        'musics-search-key': {
+          templateUrl: 'views/musics/modal/searchkey/search-key.html',
+//          controller: 'SearchModalController'
+        }
+      }
+    })
+    
+    // musicians
     .state('tabs.musicians', {
       url: '/musicians',
       views: {
@@ -34,6 +52,8 @@ angular.module('App', ['ionic'])
         }
       }
     })
+    
+    // concerts
     .state('tabs.concerts', {
       url: '/concerts',
       views: {
@@ -42,6 +62,8 @@ angular.module('App', ['ionic'])
         }
       }
     })
+    
+    // mypage
     .state('tabs.mypage', {
       url: '/mypage',
       views: {
