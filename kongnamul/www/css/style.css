@@ -80,3 +80,111 @@
 .composer-name {
     margin-top: 8px;
 }
+
+/* shbaek add */
+/* Empty. Add your own CSS if you like */
+.bar-custom-color {
+    background-color: #7F7669;
+    color: #FFECD2;
+}
+
+.sh-bar-subheader {
+    top: 44px;
+    height: 33px;
+    background-color: #FFECD2;
+    border: 1px solid #7F7669;
+}
+
+.sh-has-subheader{
+    top: 33px;
+}
+
+.sh-list-item {
+    background-color: #efefef;
+    border: 1px solid #CCBDA8;
+}
+
+.sh-select {
+    border-radius: 4px;
+    font-weight: bold;
+    color: #7F4F0E;
+    width: 80px;
+}
+
+.sh-select > option {
+    font-weight: bold;
+    color: #7F4F0E;
+}
+
+.sh-detail-content {
+    padding: 8px;
+    border: 1px solid #CCBDA8;
+    background-color: #fff;
+}
+
+.sh-detail-title {
+    border: 2px solid #CCBDA8;
+    background-color: #CCBDA8;
+    padding: 8px;
+    color: #7F4F0E;
+}
+
+.sh-detail-title > label {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.sh-search-input {
+    height: 20px;
+    margin-left: 8px;
+    border-radius: 4px;
+    padding: 0 0 0 4px;
+}
+
+.sh-rating-wrapper {
+    display: inline-block;
+    text-align: center;
+    border: 2px solid #FF9200;
+    border-radius: 4px;
+    padding: 8px 8px 0;
+    position: relative;
+    left: 30px;
+    bottom: 27px;
+}
+
+.sh-rating-wrapper > label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/*star rating*/
+.star_rating {font-size:0; letter-spacing:-4px;}
+.star_rating a {
+    font-size:22px;
+    letter-spacing:0;
+    display:inline-block;
+    margin-left:5px;
+    color:#ccc;
+    text-decoration:none;
+}
+.star_rating a:first-child {margin-left:0;}
+.star_rating a.on {color:#777;}
+
+.sh-good-area {
+    width: 32%;
+    height: 70px;
+    border: 2px solid #7F7669;
+}
+
+.sh-comment-area {
+    width: 33%;
+    height: 70px;
+    border: 2px solid #7F7669;
+}
+
+.sh-hashtag-area {
+    width: 32%;
+    height: 70px;
+    border: 2px solid #7F7669;
+}
+

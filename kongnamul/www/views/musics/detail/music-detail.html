@@ -1,10 +1,39 @@
-<ion-view view-title="상세">
-  <ion-content>
-    <h1>{{music.koreanName}}</h1>
-    <h1>( {{music.name}} )</h1>
-    <p><strong>작곡가 : </strong>{{music.composer}}</p>
-    <p><strong>장르 : </strong>{{music.genre}}</p>
-    <p><strong>작곡연도 : </strong>{{music.compositionYear}}</p>
-    <p><strong>악기 : </strong>{{music.instrument}}</p>
-  </ion-content>
+<ion-view view-title="Music Detail">
+    <ion-content class="sh-detail-content">
+        <div class="sh-detail-title">
+            <label>{{music.name}}</label>
+        </div>
+        <div class="sh-music-detail-thumbnail">
+            <img src="{{music.concertImage}}" style="width:100%;" />
+        </div>
+        <!--<h1>( {{music.name}} )</h1>-->
+        <div style="padding : 12px; background-color:#FFECD2;">
+            <div style="display:inline-block">
+                <p><strong>작곡가 : </strong>{{music.composer}}</p>
+                <p><strong>장르 : </strong>{{music.genre}}</p>
+                <p><strong>작곡연도 : </strong>{{music.compositionYear}}</p>
+                <p><strong>악기 : </strong>{{music.instrument}}</p>
+            </div>
+            <div class="sh-rating-wrapper">
+                <label>Rating</label>
+                <p class="star_rating">
+                    <a href="#" class="on">★</a>
+                    <a href="#" class="on">★</a>
+                    <a href="#" class="on">★</a>
+                    <a href="#">★</a>
+                    <a href="#">★</a>
+                </p>
+            </div>
+        </div>
+        <div style="padding:8px; background-color:#CCBDA8;">
+            <div class="sh-good-area" style="display:inline-block">
+            </div>
+            <div class="sh-comment-area" style="display:inline-block">
+            
+            </div>
+            <div class="sh-hashtag-area" style="display:inline-block">
+            
+            </div>
+        </div>
+    </ion-content>
 </ion-view>
