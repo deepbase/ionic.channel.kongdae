@@ -19,6 +19,15 @@ angular.module('App', ['ionic'])
         }
       }
     })
+    .state('tabs.searchModal', {
+    	url: '/musics/search-modal/',
+    	views: {
+    		'musics-search-tab': {
+    			templateUrl: 'views/musics/modal/search-modal.html',
+    			controller: 'SearchModalController',
+    		}
+    	}
+    })
     .state('tabs.musicDetail', {
       url: '/detail/:id',
       views: {
@@ -28,20 +37,15 @@ angular.module('App', ['ionic'])
         }
       }
     })
-    .state('tabs.searchKeytabs', {
-      url: '/searchKeyTabs',
-      abstract: true,
-      templateUrl: 'views/musics/modal/search-modal.html'
-    })
-    .state('tabs.searchKeytabs.searchKeyView', {
-      url: '/musics/modal/:key',
-      views: {
-        'musics-search-key': {
-          templateUrl: 'views/musics/modal/searchkey/search-key.html',
+//    .state('tabs.searchKeytabs.searchKeyView', {
+//      url: '/musics/modal/:key',
+//      views: {
+//        'musics-search-key': {
+//          templateUrl: 'views/musics/modal/searchkey/search-key.html',
 //          controller: 'SearchModalController'
-        }
-      }
-    })
+//        }
+//      }
+//    })
     
     // musicians
     .state('tabs.musicians', {
@@ -86,3 +90,21 @@ angular.module('App', ['ionic'])
     }
   });
 })
+
+.factory('Conditions', function() {
+	 return {
+	     Composers:
+	     	 [{ englishName: 'All', koreanName: '모든 작곡가', selected: true },
+     	      { englishName: 'Bach', koreanName: '바하', selected: false },
+     		  { englishName: 'Beethoven', koreanName: '베토벤', selected: false },
+	     	  { englishName: 'Chopin', koreanName: '쇼팽', selected: false }],
+	     Genres:
+	     	 [{ englishName: 'All', koreanName: '모든 장르', selected: true },
+	          { englishName: 'Symphony', koreanName: '교향곡', selected: false },
+	     	  { englishName: 'Concerto', koreanName: '협주곡', selected: false }],
+ 	     Instruments:
+	     	 [{ englishName: 'All', koreanName: '모든 악기', selected: true },
+	     	  { englishName: 'Orchestra', koreanName: '오케스트라', selected: false },
+	     	  { englishName: 'Piano', koreanName: '피아노', selected: false }]
+	 };
+});

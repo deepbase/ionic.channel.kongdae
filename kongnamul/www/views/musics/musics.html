@@ -38,20 +38,34 @@
     
     .custom-arrow-icon {
         margin: 0 0 0 4px;
-        font-size: 18px;
+        font-size: 12px;
+    }
+    
+    .meaningful-words {
+        font-size: 24px;
+    }
+    
+    .postposition-words {
+        margin-top: 10px;
+        font-size: 10px;
     }
     
 </style>
 
 <ion-view>
   <ion-nav-title>
-    <button ng-click="showSearchModal()" ng-controller="SearchModalController" class="top-title button button-clear header-button"><span>모든 곡</span><i class="custom-arrow-icon ion-ios-arrow-down"></i></button>
+    <span>콩나물 음악 노트</span>
   </ion-nav-title>
   <ion-nav-buttons side="primary">
-    <button class="button button-clear icon ion-ios-search" ng-click="openHelp($event)"></button>
+    <button class="button button-clear icon ion-ios-search"></button>
   </ion-nav-buttons>
   <div class = "bar bar-subheader bar-light">
-    <button class="button button-clear">평점순<i class="custom-arrow-icon ion-arrow-down-b"></i></button>
+    <button class="button button-clear meaningful-words" ng-click="showSearchModal({englishName : 'composers', koreanName : '작곡가'})">모든 작곡가<i class="custom-arrow-icon ion-arrow-down-b"></i></button>
+    <span class="postposition-words"> 의</span>
+    <button class="button button-clear meaningful-words" ng-click="showSearchModal({englishName : 'genres', koreanName : '장르'})">모든 장르<i class="custom-arrow-icon ion-arrow-down-b"></i></button>
+    <span class="postposition-words"> 중</span>
+    <button class="button button-clear meaningful-words" ng-click="showSearchModal({englishName : 'instruments', koreanName : '악기'})">모든 악기<i class="custom-arrow-icon ion-arrow-down-b"></i></button>
+    <span class="postposition-words"> 이(가) 나오는 곡</span>
   </div>
   <ion-content class = "padding has-subheader">
     <ion-refresher on-refresh="load()" pulling-text="Pull to Refresh"></ion-refresher>

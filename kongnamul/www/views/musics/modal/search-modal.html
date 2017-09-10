@@ -8,28 +8,34 @@
       top: 20%;
       background-color: #ffffff;
   }
+  
+  .firstColumn {
+      width: 50%;
+      float: left;
+      color: #000;
+  }
+
+  .secondColumn {
+      width: 50%;
+      float: left;
+      background: #F2F2F2;
+      color: #000;
+      border-radius: 2px;
+  }
 </style>
 
 <div class="search-condition-modal">
   <ion-modal-view class="search-condition-popup">
     <ion-header-bar class="bar-dark">
-      <h1 class="title">검색조건 입력</h1>
+      <h1 class="title">{{conditions[0].koreanName}}</h1>
       <button class="button button-clear" ng-click="hideSearchModal()">Close</button>
     </ion-header-bar>
-    <ion-tabs class = "tabs-striped">
-      <ion-tab title = "작곡가" href="tabs.searchKeytabs.searchKeyView({key: composer})">
-        <ion-nav-view name="musics-search-key"></ion-nav-view>
-      </ion-tab>
-      <ion-tab title = "장르" href="tabs.searchKeytabs.searchKeyView({key: genre})"/>
-        <ion-nav-view name="musics-search-key"></ion-nav-view>
-      </ion-tab>
-      <ion-tab title = "작곡연도" href="tabs.searchKeytabs.searchKeyView({key: compositionYear})"/>
-        <ion-nav-view name="musics-search-key"></ion-nav-view>
-      </ion-tab>
-      <ion-tab title = "악기" href="#/musics/modal/instrument"/>
-        <ion-nav-view name="musics-search-key"></ion-nav-view>
-      </ion-tab>
-    </ion-tabs>
+    <ion-content class="has-subheader">
+      <ion-item class="secondColumn" ng-repeat="condition in conditions">
+        {{condition.koreanName}}
+      </ion-item> 
+    <!-- 여기에다가 condition 넣어야 -->
+    </ion-content>
   </ion-modal-view>
 </div>
 
