@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.chapter5978610" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>chapter5</name>
-  <description>&#xD;
-        An Ionic Framework and Cordova project.&#xD;
-    </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">&#xD;
-      Ionic Framework Team&#xD;
-    </author>
+  <name>kongnamul</name>
+  <description>
+      Kongnamul Note
+  </description>
+  <author email="joonki0627@gmail.com">
+      Kongnamul Team
+  </author>
   <content src="index.html"/>
   <access origin="*"/>
   <preference name="webviewbounce" value="false"/>
