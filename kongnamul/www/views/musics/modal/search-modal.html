@@ -27,15 +27,20 @@
 <div class="search-condition-modal">
   <ion-modal-view class="search-condition-popup">
     <ion-header-bar class="bar-dark">
-      <h1 class="title">{{conditions[0].koreanName}}</h1>
-      <button class="button button-clear" ng-click="hideSearchModal()">Close</button>
+      <h1 class="title">{{conditionName}}</h1>
+      <button class="button button-clear" ng-click="hideSearchModal(true)">Close</button>
     </ion-header-bar>
-    <ion-content class="has-subheader">
-      <ion-item class="secondColumn" ng-repeat="condition in conditions">
+    <ion-content>
+      <ion-item class="secondColumn item item-checkbox" ng-repeat="condition in conditions">
+        <label class="checkbox">
+          <input type="checkbox" ng-model="condition.selected" ng-click="checkAllSelected({{condition}})"/>
+        </label>
         {{condition.koreanName}}
       </ion-item> 
-    <!-- 여기에다가 condition 넣어야 -->
     </ion-content>
   </ion-modal-view>
 </div>
 
+<script>
+
+</script>

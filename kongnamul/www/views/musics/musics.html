@@ -45,11 +45,6 @@
         font-size: 24px;
     }
     
-    .postposition-words {
-        margin-top: 10px;
-        font-size: 10px;
-    }
-    
 </style>
 
 <ion-view>
@@ -60,28 +55,28 @@
     <button class="button button-clear icon ion-ios-search"></button>
   </ion-nav-buttons>
   <div class = "bar bar-subheader bar-light">
-    <button class="button button-clear meaningful-words" ng-click="showSearchModal({englishName : 'composers', koreanName : '작곡가'})">모든 작곡가<i class="custom-arrow-icon ion-arrow-down-b"></i></button>
-    <span class="postposition-words"> 의</span>
-    <button class="button button-clear meaningful-words" ng-click="showSearchModal({englishName : 'genres', koreanName : '장르'})">모든 장르<i class="custom-arrow-icon ion-arrow-down-b"></i></button>
-    <span class="postposition-words"> 중</span>
-    <button class="button button-clear meaningful-words" ng-click="showSearchModal({englishName : 'instruments', koreanName : '악기'})">모든 악기<i class="custom-arrow-icon ion-arrow-down-b"></i></button>
-    <span class="postposition-words"> 이(가) 나오는 곡</span>
+    <div>
+      <button class="button button-clear meaningful-words" ng-click="showSearchModal({englishName : 'composers', koreanName : '작곡가'})">모든 작곡가<i class="custom-arrow-icon ion-arrow-down-b"></i></button>
+    </div>
+    <div>
+      <button class="button button-clear meaningful-words" ng-click="showSearchModal({englishName : 'genres', koreanName : '장르'})">모든 장르<i class="custom-arrow-icon ion-arrow-down-b"></i></button>
+    </div>
+    <div>
+      <button class="button button-clear meaningful-words" ng-click="showSearchModal({englishName : 'instruments', koreanName : '악기'})">모든 악기<i class="custom-arrow-icon ion-arrow-down-b"></i></button>
+    </div>
   </div>
-        <ion-content class="has-subheader">
-
-        <ion-list ng-repeat="music in musics" >
-            <ion-item class="sh-list-item" ui-sref="tabs.musicDetail({id: music.id})">
-                <div style="display:inline-block;">
-                    <img src="http://kongnamul.pythonanywhere.com/static/musics/img/Beethoven.jpg" style="width:50px;border-radius:4px;">
-                </div>
-                <div style="display:inline-block; margin:0 0 0 10px;">
-                    <h2>{{music.koreanName}}</h2>
-                    <h3>{{music.composer}}</h3>
-                    <p>Simple Description</p>
-                </div>
-            </ion-item>
-        </ion-list>
-
-    </ion-content>
-  
+  <ion-content class="has-subheader">
+    <ion-list ng-repeat="music in musics" >
+        <ion-item class="sh-list-item" ui-sref="tabs.musicDetail({id: music.id})">
+            <div style="display:inline-block;">
+                <img src="http://kongnamul.pythonanywhere.com/static/musics/img/Beethoven.jpg" style="width:50px;border-radius:4px;">
+            </div>
+            <div style="display:inline-block; margin:0 0 0 10px;">
+                <h2>{{music.koreanName}}</h2>
+                <h3>{{music.composer}}</h3>
+                <p>Simple Description</p>
+            </div>
+        </ion-item>
+    </ion-list>
+  </ion-content>
 </ion-view>
