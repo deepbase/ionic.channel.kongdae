@@ -188,3 +188,25 @@
     border: 2px solid #7F7669;
 }
 
+.icon-label {
+	border-radius : 40%;
+}
+
+.icon-label i {
+	vertical-aligh : middle !important;
+}
+
+.button-bar label i {
+	margin-right:5px;
+}
+
+.button-bar label {
+	border : 1px solid #ddd !important;
+	border-top-left-radius:4px !important;
+	border-top-right-radius:4px !important;
+}
+
+.content-panel {
+    border: 1px solid #ddd;
+    height: auto;
+}
