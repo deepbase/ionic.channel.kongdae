@@ -53,78 +53,30 @@
 			  </label>
 			</div>
 			<div class="content-panel">
-				<div class="list card" style="margin:`10px 8px 10px 8px !important;">
+				<div class="list card" style="margin:`10px 8px 10px 8px !important;" ng-repeat="review in reviews">
 				  <div class="item item-avatar">
 				    <img src="avatar.jpg">
 				    <h2>Lv 3. 김준기</h2>
-				    <p>완전 좋아요!</p>
+				    <p>{{review.title}}</p>
 				  </div>
 				
 				  <div class="item item-image" style="height:150px;">
 				    <img src="cover.jpg">
+				    <p>{{review.content}}</p>
 				  </div>
 				  <div class="row">
 				  	<div class="col" style="margin-bottom:0px; border-right:2px solid #ddd">
 					  <a class="item item-icon-left assertive" href="#">
-					    <i class="icon ion-heart"></i><span>2</span>
+					    <i class="icon ion-heart"></i><span>{{review.likeUsers.length}}</span>
 					  </a>				  	
 				  	</div>
 				  	<div class="col" style="margin-bottom:0px;">
 	  				  <a class="item item-icon-left" href="#">
-					    <i class="icon ion-android-textsms"></i><span>7</span>
+					    <i class="icon ion-android-textsms"></i><span>{{review.commentUsers.length}}</span>
 					  </a>				  	
 				  	</div>
 				  </div>
 				</div>
-				
-				<div class="list card" style="margin:`10px 8px 10px 8px !important;">
-				  <div class="item item-avatar">
-				    <img src="avatar.jpg">
-				    <h2>Lv 3. 이정윤</h2>
-				    <p>완전 좋아요!</p>
-				  </div>
-				
-				  <div class="item item-image" style="height:150px;">
-				    <img src="cover.jpg">
-				  </div>
-				  <div class="row">
-				  	<div class="col" style="margin-bottom:0px; border-right:2px solid #ddd">
-					  <a class="item item-icon-left assertive" href="#">
-					    <i class="icon ion-heart"></i><span>2</span>
-					  </a>				  	
-				  	</div>
-				  	<div class="col" style="margin-bottom:0px;">
-	  				  <a class="item item-icon-left" href="#">
-					    <i class="icon ion-android-textsms"></i><span>7</span>
-					  </a>				  	
-				  	</div>
-				  </div>
-				</div>
-				
-				<div class="list card" style="margin:`10px 8px 10px 8px !important;">
-				  <div class="item item-avatar">
-				    <img src="avatar.jpg">
-				    <h2>Lv 3. 한승진</h2>
-				    <p>완전 좋아요!</p>
-				  </div>
-				
-				  <div class="item item-image" style="height:150px;">
-				    <img src="cover.jpg">
-				  </div>
-				  <div class="row">
-				  	<div class="col" style="margin-bottom:0px; border-right:2px solid #ddd">
-					  <a class="item item-icon-left assertive" href="#">
-					    <i class="icon ion-heart"></i><span>2</span>
-					  </a>				  	
-				  	</div>
-				  	<div class="col" style="margin-bottom:0px;">
-	  				  <a class="item item-icon-left" href="#">
-					    <i class="icon ion-android-textsms"></i><span>7</span>
-					  </a>				  	
-				  	</div>
-				  </div>
-				</div>
-												
 			</div>
 		</div>		
 		
