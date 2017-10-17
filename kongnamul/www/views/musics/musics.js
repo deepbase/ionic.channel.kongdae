@@ -2,9 +2,9 @@ angular.module('App')
 .controller('MusicsController', function ($scope, $http, $ionicModal, Conditions) {
   
   $scope.musics;
-  $scope.composers = Conditions.Composers;
-  $scope.genres = Conditions.Genres;
-  $scope.instruments = Conditions.Instruments;
+  $scope.composers = Conditions.data.Composers;
+  $scope.genres = Conditions.data.Genres;
+  $scope.instruments = Conditions.data.Instruments;
   
   $scope.$on('$destroy', function() {
 	  $scope.searchModal.remove();
@@ -58,6 +58,7 @@ angular.module('App')
 		    default : break;
 		  }
 	  }
+	  Conditions.store();
       $scope.searchModal.hide();
   };
   
