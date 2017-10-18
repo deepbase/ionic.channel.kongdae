@@ -99,24 +99,66 @@ angular.module('App', ['ionic'])
 	
 	var defaultData = {
 	     Composers:
-	     	 [{ englishName: 'All', koreanName: '모든 작곡가', selected: true },
-    	      { englishName: 'Bach', koreanName: '바하', selected: true },
-    		  { englishName: 'Beethoven', koreanName: '베토벤', selected: true },
-	     	  { englishName: 'Chopin', koreanName: '쇼팽', selected: true }],
+	    	 {
+	    	     info: { englishName: 'All Composers', koreanName: '모든 작곡가', suffix: '명'},
+	    	     data: [{ englishName: 'All', koreanName: '모든 작곡가', selected: true },
+    	    	        { englishName: 'Bach', koreanName: '바하', selected: true },
+	    	    	    { englishName: 'Beethoven', koreanName: '베토벤', selected: true },
+	    		     	{ englishName: 'Chopin', koreanName: '쇼팽', selected: true }]
+	    	 },
 	     Genres:
-	     	 [{ englishName: 'All', koreanName: '모든 장르', selected: true },
-	          { englishName: 'Symphony', koreanName: '교향곡', selected: true },
-	     	  { englishName: 'Concerto', koreanName: '협주곡', selected: true }],
+	    	 {
+	    	     info: { englishName: 'All Genres', koreanName: '모든 장르', suffix: '장르'},
+	    	     data: [{ englishName: 'All', koreanName: '모든 장르', selected: true },
+	    		        { englishName: 'Symphony', koreanName: '교향곡', selected: true },
+	    		     	{ englishName: 'Concerto', koreanName: '협주곡', selected: true }]
+	    	 },
 	     Instruments:
-	     	 [{ englishName: 'All', koreanName: '모든 악기', selected: true },
-	     	  { englishName: 'Orchestra', koreanName: '오케스트라', selected: true },
-	     	  { englishName: 'Piano', koreanName: '피아노', selected: true }]
+	    	 {
+	    	     info: { englishName: 'All Instruments', koreanName: '모든 악기', suffix: '종류 포함'},
+	    	     data: [{ englishName: 'All', koreanName: '모든 악기', selected: true },
+	    		     	{ englishName: 'Orchestra', koreanName: '오케스트라', selected: true },
+	    		     	{ englishName: 'Piano', koreanName: '피아노', selected: true }]
+	    	 }
 	};
 	
 	var Conditions = {
 		data: [],
 		store: function() {
 			store();
+		},
+		changeConditionName : function(conditionName) {
+			var conditions, name, selectedCount = 0;
+			
+			switch(conditionName) {
+			    case 'composers' : conditions = Conditions.data.Composers; break;
+			    case 'genres' : conditions = Conditions.data.Genres; break;
+			    case 'instruments' : conditions = Conditions.data.Instruments; break;
+			    default : break;
+			}
+			if (conditions.data[0].selected) {
+				conditions.info.englishName = conditions.data[0].englishName;
+				conditions.info.koreanName = conditions.data[0].koreanName;
+				return;
+			}
+			for (var i = 1, max = conditions.data.length; i < max; i++) {
+				if (conditions.data[i].selected) {
+					name = conditions.data[i].koreanName;
+					break;
+				}
+			}
+			for (var i = 1, max = conditions.data.length; i < max; i++) {
+				if (conditions.data[i].selected) {
+					selectedCount++;
+				}
+			}
+			if (selectedCount == 1) {
+				conditions.info.koreanName = name;
+			} else if (selectedCount > 1) {
+				conditions.info.koreanName = name.concat(" 외 ").concat(selectedCount - 1).concat(conditions.info.suffix);
+			} else {
+				return "non-selected";
+			}
 		}
 	}
 	

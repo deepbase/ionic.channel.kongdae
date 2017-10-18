@@ -23,15 +23,15 @@ angular.module('App')
 	  $scope.beforeConditions = condition;
 	  $scope.conditionKey = condition.englishName;
 	  switch(condition.englishName) {
-	  	case 'composers' : $scope.conditions = $scope.composers;
+	  	case 'composers' : $scope.conditions = $scope.composers.data;
 	  	                   $scope.beforeConditions = angular.copy($scope.composers);
 	  	                   $scope.conditionName = '작곡가';
 	  	                   break;
-	  	case 'genres' : $scope.conditions = $scope.genres;
+	  	case 'genres' : $scope.conditions = $scope.genres.data;
 	                    $scope.beforeConditions = angular.copy($scope.genres);
 	  	                $scope.conditionName = '장르';
 	  	                break;
-	  	case 'instruments' : $scope.conditions = $scope.instruments;
+	  	case 'instruments' : $scope.conditions = $scope.instruments.data;
 	                         $scope.beforeConditions = angular.copy($scope.instruments);
 	  	                     $scope.conditionName = '악기';
 	  	                     break;
@@ -57,8 +57,12 @@ angular.module('App')
 		    case 'instruments' : $scope.instruments = angular.copy($scope.beforeConditions); break;
 		    default : break;
 		  }
+	  } else {
+		  if ("non-selected" === Conditions.changeConditionName($scope.conditionKey)) {
+			  // 아무것도 선택안됐을때 처리
+		  }
+		  Conditions.store();
 	  }
-	  Conditions.store();
       $scope.searchModal.hide();
   };
   

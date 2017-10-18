@@ -71,15 +71,15 @@
 
   <div class = "row bar bar-subheader bar-light">
     <div class="col search-component">
-      <label class="button" ng-click="showSearchModal({englishName : 'composers', koreanName : '작곡가'})">모든 작곡가</label>
+      <label class="button" ng-click="showSearchModal({englishName : 'composers', koreanName : '작곡가'})">{{composers.info.koreanName}}</label>
       <i class="custom-arrow-icon ion-arrow-down-b"></i>
     </div>
     <div class="col search-component">
-      <label class="button" ng-click="showSearchModal({englishName : 'genres', koreanName : '장르'})">모든 장르</label>
+      <label class="button" ng-click="showSearchModal({englishName : 'genres', koreanName : '장르'})">{{genres.info.koreanName}}</label>
       <i class="custom-arrow-icon ion-arrow-down-b"></i>
     </div>
     <div class="col search-component">
-      <label class="button" ng-click="showSearchModal({englishName : 'instruments', koreanName : '악기'})">모든 악기</label>
+      <label class="button" ng-click="showSearchModal({englishName : 'instruments', koreanName : '악기'})">{{instruments.info.koreanName}}</label>
       <i class="custom-arrow-icon ion-arrow-down-b"></i>
     </div>
   </div>
