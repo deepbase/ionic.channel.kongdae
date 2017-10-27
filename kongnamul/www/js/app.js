@@ -3,6 +3,12 @@ angular.module('App', ['ionic'])
 .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   $ionicConfigProvider.tabs.position('bottom');
   $stateProvider
+  	.state('login', {
+  		url: '/login',
+  		templateUrl: 'login/login.html',
+  		controller: 'LoginController'
+  	})
+  	
     .state('tabs', {
       url: '/tabs',
       abstract: true,
@@ -37,15 +43,6 @@ angular.module('App', ['ionic'])
         }
       }
     })
-//    .state('tabs.searchKeytabs.searchKeyView', {
-//      url: '/musics/modal/:key',
-//      views: {
-//        'musics-search-key': {
-//          templateUrl: 'views/musics/modal/searchkey/search-key.html',
-//          controller: 'SearchModalController'
-//        }
-//      }
-//    })
     
     // musicians
     .state('tabs.musicians', {
@@ -77,7 +74,7 @@ angular.module('App', ['ionic'])
       }
     })
 
-  $urlRouterProvider.otherwise('/tabs/musics');
+  $urlRouterProvider.otherwise('/login');
 })
 
 .run(function($ionicPlatform) {
