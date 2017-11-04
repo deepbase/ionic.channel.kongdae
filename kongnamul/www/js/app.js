@@ -1,6 +1,6 @@
 angular.module('App', ['ionic'])
-
-.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider, $httpProvider) {
+.constant('root_url', 'https://kongnamul.pythonanywhere.com')
+.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   $ionicConfigProvider.tabs.position('bottom');
   $stateProvider
   	.state('login', {
@@ -30,7 +30,7 @@ angular.module('App', ['ionic'])
     	views: {
     		'musics-search-tab': {
     			templateUrl: 'views/musics/modal/search-modal.html',
-    			controller: 'SearchModalController',
+    			controller: 'SearchModalController'
     		}
     	}
     })
@@ -39,7 +39,7 @@ angular.module('App', ['ionic'])
       views: {
         'musics-tab': {
           templateUrl: 'views/musics/detail/music-detail.html',
-          controller: 'MusicDetailController',
+          controller: 'MusicDetailController'
         }
       }
     })
@@ -69,7 +69,8 @@ angular.module('App', ['ionic'])
       url: '/mypage',
       views: {
         'mypage-tab': {
-          templateUrl: 'views/mypage/mypage.html'
+          templateUrl: 'views/mypage/mypage.html',
+          controller: 'MypageController'
         }
       }
     })
@@ -162,14 +163,6 @@ angular.module('App', ['ionic'])
 	return Conditions;
 })
 
-//.factory('AuthService', function() {
-//	//
-//	var rootUrl = "http://localhost:8000";
-//	var MusicService = {
-//		
-//	}
-//})
-
 .factory('$localstorage', ['$window', function($window) {
   return {
     set: function(key, value) {
@@ -183,6 +176,9 @@ angular.module('App', ['ionic'])
     },
     getObject: function(key) {
       return JSON.parse($window.localStorage[key] || '{}');
+    },
+    remove: function(key) {
+      $window.localStorage.removeItem(key);
     }
   }
 }])

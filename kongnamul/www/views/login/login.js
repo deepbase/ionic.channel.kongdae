@@ -3,9 +3,15 @@ angular.module('App')
 	//
 	$scope.data = {};
 	
+	$scope.load = function() {
+		if ($localstorage.get("authToken")) {
+			$state.go('tabs.musics');
+		}
+	}
+	
     $scope.login = function() {
     	startLoading();
-    	$http.post("http://localhost:8000/api-token-auth/", {
+    	$http.post("https://kongnamul.pythonanywhere.com/api-token-auth/", {
     		'username': $scope.data.username,
     		'password': $scope.data.password
     	}).then(response => {
@@ -21,13 +27,15 @@ angular.module('App')
     	});
     }
     
-    var startLoading = function() {
+    $scope.load();
+    
+    function startLoading() {
         $ionicLoading.show({
             template: '<p>사용자 정보 확인중</p><ion-spinner></ion-spinner>'
         });
     }
     
-    var finishLoading = function() {
+    function finishLoading() {
     	$ionicLoading.hide();
     }
 })

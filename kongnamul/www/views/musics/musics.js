@@ -1,6 +1,6 @@
 angular.module('App')
-.controller('MusicsController', function ($scope, $http, $ionicModal, $localstorage, Conditions) {
-  
+.controller('MusicsController', function ($scope, $http, $ionicModal, $localstorage, Conditions, root_url) {
+  //
   $scope.musics;
   $scope.composers = Conditions.data.Composers;
   $scope.genres = Conditions.data.Genres;
@@ -11,19 +11,9 @@ angular.module('App')
   });
 
   $scope.load = function () {
-//	  $http.get('http://localhost:8000/musics', {
-//		  headers: {
-//			  'Authorization': "Token" + $localstorage.get("authToken")
-//		  }
-//	  }).then(response => {
-//		  $scope.musics = response;
-//	  }).catch(error => {
-//		  console.log("");
-//	  });
-	  
 	  $http({
 		  method: 'GET',
-		  url: 'http://localhost:8000/musics',
+		  url: root_url + '/musics',
 		  headers: {
 			  'Authorization': "Token " + $localstorage.get("authToken")
 		  }
@@ -34,18 +24,6 @@ angular.module('App')
 	  }).finally(function () {
           $scope.$broadcast('scroll.refreshComplete');
       });
-//    $http.get('https://kongnamul.pythonanywhere.com/musics').success(function (musics) {
-//	  $http.defaults.headers.common.Authorization = "Token " + $localstorage.get("authToken");
-//      $http.get('http://localhost:8000/musics').success(function (musics) {
-//	      $scope.musics = musics;
-//      }).finally(function () {
-//          $scope.$broadcast('scroll.refreshComplete');
-//      });
-//	$http.get('http://localhost:8000/musics').success(function (musics) {
-//    	$scope.musics = musics;
-//    }).finally(function () {
-//        $scope.$broadcast('scroll.refreshComplete');
-//    });
   };
   
   $scope.showSearchModal = function (condition) {
