@@ -1,11 +1,11 @@
 angular.module('App', ['ionic'])
 
-.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider, $httpProvider) {
   $ionicConfigProvider.tabs.position('bottom');
   $stateProvider
   	.state('login', {
   		url: '/login',
-  		templateUrl: 'login/login.html',
+  		templateUrl: 'views/login/login.html',
   		controller: 'LoginController'
   	})
   	
@@ -75,17 +75,6 @@ angular.module('App', ['ionic'])
     })
 
   $urlRouterProvider.otherwise('/login');
-})
-
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
-    }
-  });
 })
 
 .factory('Conditions', function() {
@@ -171,4 +160,40 @@ angular.module('App', ['ionic'])
 	}
 	
 	return Conditions;
+})
+
+//.factory('AuthService', function() {
+//	//
+//	var rootUrl = "http://localhost:8000";
+//	var MusicService = {
+//		
+//	}
+//})
+
+.factory('$localstorage', ['$window', function($window) {
+  return {
+    set: function(key, value) {
+      $window.localStorage[key] = value;
+    },
+    get: function(key, defaultValue) {
+      return $window.localStorage[key] || defaultValue;
+    },
+    setObject: function(key, value) {
+      $window.localStorage[key] = JSON.stringify(value);
+    },
+    getObject: function(key) {
+      return JSON.parse($window.localStorage[key] || '{}');
+    }
+  }
+}])
+
+.run(function($ionicPlatform, $http) {
+  $ionicPlatform.ready(function() {
+    if(window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    }
+    if(window.StatusBar) {
+      StatusBar.styleDefault();
+    }
+  });
 });
