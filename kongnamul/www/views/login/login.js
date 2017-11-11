@@ -1,5 +1,5 @@
 angular.module('App')
-.controller('LoginController', function ($scope, $http, $ionicLoading, $ionicPopup, $state, $localstorage) {
+.controller('LoginController', function ($scope, $http, $ionicLoading, $ionicPopup, $state, $localstorage, root_url) {
 	//
 	$scope.data = {};
 	
@@ -11,7 +11,7 @@ angular.module('App')
 	
     $scope.login = function() {
     	startLoading();
-    	$http.post("https://kongnamul.pythonanywhere.com/api-token-auth/", {
+    	$http.post(root_url + "/api-token-auth/", {
     		'username': $scope.data.username,
     		'password': $scope.data.password
     	}).then(response => {

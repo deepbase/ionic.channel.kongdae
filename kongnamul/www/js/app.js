@@ -1,4 +1,5 @@
 angular.module('App', ['ionic'])
+//.constant('root_url', 'http://localhost:8000')
 .constant('root_url', 'https://kongnamul.pythonanywhere.com')
 .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   $ionicConfigProvider.tabs.position('bottom');
