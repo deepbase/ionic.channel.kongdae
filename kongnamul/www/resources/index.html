@@ -1,0 +1,64 @@
+<html lang="en">
+    <head>
+        <title>kongdae-join</title>
+        <style>
+            header {
+                text-align:center;
+                margin-top: 20%;
+            }
+            
+            #join_form{
+                text-align:center;
+                margin-top:20%;
+            }
+            input[type=name], input[type=email], input[type=password] {
+                border: none;
+                border-bottom: 1px solid lightgray;
+                width: 80%;
+                padding: 20px;
+                color: lightgray;
+                font-size:35px;
+            }
+            
+            input[type=checkbox] {
+                margin-right: 20px;
+            }
+            #join_form div{
+                margin-top:3%;
+            }
+            
+            #join_form #checkbox {
+                margin-top:5%;
+                font-size:30px;
+            }
+            
+            #join_btn {
+                text-align: center;
+                margin-top: 20%;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="#"><img src="join_profile.png" width="23%"></a>
+        </header>
+        <div id="join_form">
+            <div>
+                <input type="name" id="myName" value="이름">
+            </div>
+            <div>
+                <input type="email" id="myEmail" value="example@gmail.com">
+            </div>
+            <div>
+                <input type="password" id="password" value="비밀번호(6자리 이상)">
+            </div>
+            <div id="checkbox" >
+                <input type="checkbox" value="none"> <a href="#">서비스 이용약관 개인정보 취급방침</a>에 동의합니다.
+            </div>
+        </div><!--End of join_form-->
+        <div id="join_btn">
+            <a href="#"> <img src="join_btn_inactive.png" width="80%"> </a>
+        </div>
+    </body>
+</html>
